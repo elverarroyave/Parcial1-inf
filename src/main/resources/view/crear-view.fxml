@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <AnchorPane prefHeight="487.0" prefWidth="419.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.udea.inf.parcial.controller.CrearObjetoController">
    <children>
       <Pane prefHeight="81.0" prefWidth="419.0">
@@ -82,13 +81,13 @@
                   <Insets left="20.0" />
                </GridPane.margin>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="256.0" GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="txtCodigo" prefHeight="25.0" prefWidth="256.0" GridPane.columnIndex="1" />
+            <TextField fx:id="txtDescripcion" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtMarca" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtContenido" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtUM" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtCategoria" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtPrecio" GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
       </GridPane>
       <Label layoutX="23.0" layoutY="73.0" text="Ingrese los datos:">
@@ -96,7 +95,7 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Button layoutX="255.0" layoutY="437.0" mnemonicParsing="false" text="Guardar" />
+      <Button layoutX="255.0" layoutY="437.0" mnemonicParsing="false" onAction="#crearProducto" text="Guardar" />
       <Button layoutX="335.0" layoutY="437.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" text="Salir" />
    </children>
 </AnchorPane>

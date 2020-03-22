@@ -30,7 +30,7 @@ public class MatrizHash {
     }
 
     public float lf() {
-        return numeroDeDatosAlmacenados/m*bkfr;
+        return (float) numeroDeDatosAlmacenados/ (float) (m*bkfr);
     }
 
     public int getSinonimos() {
@@ -50,7 +50,11 @@ public class MatrizHash {
                 maxEntry = entry;
             }
         }
-        return func(maxEntry.getKey());
+        if (maxEntry != null) {
+            return func(maxEntry.getKey());
+        } else {
+            return 0;
+        }
     }
 
     private void llenarDesdeArchivo() {

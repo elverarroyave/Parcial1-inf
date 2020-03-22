@@ -5,7 +5,13 @@ import co.edu.udea.inf.parcial.model.Producto;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-public class CrearObjetoController {
+public class ProductoController {
+
+    @FXML
+    private TextField txtCCodigo;
+
+    @FXML
+    private TextField txtCCategoria;
 
     @FXML
     private TextField txtCodigo;
@@ -45,7 +51,14 @@ public class CrearObjetoController {
         productoBsn.save(producto);
 
         System.out.println("Se ha creado el objeto correctamente y se comunico al conrolador");
+    }
 
+    public void consultar(){
+        int cCodigo = Integer.parseInt(txtCCodigo.getText());
+        String cCategoria = txtCCategoria.getText();
+        Producto producto = new Producto();
+        producto.setCodigo(cCodigo);
+        producto.setCategoria(cCategoria);
 
     }
 

@@ -10,6 +10,9 @@ public class ProductoBsn {
 
     public void save(Producto producto){
         matrizHash.almacenar(producto);
+    }
 
+    public Producto consultar(Producto producto) {
+        return matrizHash.consultar(producto);
     }
 }

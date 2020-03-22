@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="487.0" prefWidth="419.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.udea.inf.parcial.controller.CrearObjetoController">
+<AnchorPane prefHeight="487.0" prefWidth="419.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.udea.inf.parcial.controller.ProductoController">
    <children>
       <Pane prefHeight="81.0" prefWidth="419.0">
          <children>

@@ -78,10 +78,7 @@ public class MatrizHash {
         int bucket = func(producto.getCategoria());
         int j;
         for (j = 0; j < bkfr; j++) {
-            if (datos[bucket][j] == null) {
-                System.out.println("Dato no encontrado");
-                return null;
-            } else if (producto.getCodigo() == datos[bucket][j].getCodigo()) {
+            if (producto.getCodigo() == datos[bucket][j].getCodigo()) {
                 System.out.println("Encontrado en: " + bucket + ", " + j);
                 return datos[bucket][j];
             }

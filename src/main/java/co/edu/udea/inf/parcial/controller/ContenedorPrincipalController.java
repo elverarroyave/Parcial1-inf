@@ -15,19 +15,19 @@ public class ContenedorPrincipalController {
 
     public void mnuSalir(){ System.exit(0);}
 
-    public void mnuAddEmployee(){
+    public void mnuConsultar(){
         try{
-            AnchorPane addEmployee = FXMLLoader.load(getClass().getClassLoader().getResource( "view/userManager/employee/add-employee.fxml"));
-            contenedorPrincipal.setCenter(addEmployee);
+            AnchorPane consultar = FXMLLoader.load(getClass().getClassLoader().getResource( "view/userManager/employee/consultar-view.fxml"));
+            contenedorPrincipal.setCenter(consultar);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void mnuAddClient(){
+    public void mnuCrear(){
         try{
-            AnchorPane addClient = FXMLLoader.load(getClass().getClassLoader().getResource("view/userManager/client/add-client.fxml"));
-            contenedorPrincipal.setCenter(addClient);
+            AnchorPane crear = FXMLLoader.load(getClass().getClassLoader().getResource( "view/userManager/employee/crear-view.fxml"));
+            contenedorPrincipal.setCenter(crear);
         } catch (IOException e) {
             e.printStackTrace();
         }

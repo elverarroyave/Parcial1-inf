@@ -60,8 +60,17 @@ public class MatrizHash {
             System.out.println("Datos sinonimos");
         }
         if (j == bkfr) {
+            boolean insert = false;
             System.out.println("Dato colisionado");
-            // What do we do?
+            while (!insert && bucket < m) {
+                bucket++;
+                for (j = 0; j < bkfr; j++) {
+                    if (datos[bucket][j] == null) {
+                        datos[bucket][j] = producto;
+                        insert = true;
+                    }
+                }
+            }
         }
     }
 
@@ -78,9 +87,15 @@ public class MatrizHash {
                 return true;
             }
         }
-
         if (j == bkfr) {
-           // Search it in overflow 
+            while (bucket < m) {
+                bucket++;
+                for (j = 0; j < bkfr; j++) {
+                    if (datos[bucket][j].getCodigo() == producto.getCodigo()) {
+                        return true;
+                    }
+                }
+            }
         }
         return false;
     }

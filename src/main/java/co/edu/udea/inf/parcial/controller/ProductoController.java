@@ -57,6 +57,18 @@ public class ProductoController {
     private TextField ctxtPrecio;
 
 
+    @FXML
+    private TextField txtNumSinonimos;
+
+    @FXML
+    private TextField txtNumColisiones;
+
+    @FXML
+    private TextField txtNumMayor;
+
+    @FXML
+    private TextField txtFactor;
+
 
     ProductoBsn productoBsn = new ProductoBsn();
 
@@ -98,7 +110,14 @@ public class ProductoController {
             ctxtPrecio.setText(producto.getPrecio() + "");
 
         }
+    }
 
+    public void darInforme(){
+
+        txtNumSinonimos.setText(productoBsn.getSinonimos()+"");
+        txtNumColisiones.setText(productoBsn.getColiciones()+"");
+        txtNumMayor.setText(productoBsn.getGreatBuket()+"");
+        txtFactor.setText(productoBsn.getLF()+"");
 
     }
 

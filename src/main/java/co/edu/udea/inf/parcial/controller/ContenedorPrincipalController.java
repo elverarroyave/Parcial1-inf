@@ -33,4 +33,9 @@ public class ContenedorPrincipalController {
         }
     }
 
+    public void mnuInforme() throws IOException {
+        AnchorPane informe = FXMLLoader.load(getClass().getClassLoader().getResource("view/informe-view.fxml"));
+        contenedorPrincipal.setCenter(informe);
+    }
+
 }

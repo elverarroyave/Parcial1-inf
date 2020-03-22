@@ -19,7 +19,7 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Informe">
               <items>
-                <MenuItem mnemonicParsing="false" text="Crear informe" />
+                <MenuItem mnemonicParsing="false" onAction="#mnuInforme" text="Crear informe" />
               </items>
             </Menu>
           </menus>

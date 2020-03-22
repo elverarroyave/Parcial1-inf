@@ -15,4 +15,22 @@ public class ProductoBsn {
     public Producto consultar(Producto producto) {
         return matrizHash.consultar(producto);
     }
+
+    public int getSinonimos(){
+        return matrizHash.getSinonimos();
+    }
+
+    public int getColiciones(){
+        return matrizHash.getColisiones();
+    }
+
+    public int getGreatBuket(){
+        return matrizHash.getGreatBucket();
+    }
+
+    public float getLF(){
+        return matrizHash.lf();
+    }
+
+
 }

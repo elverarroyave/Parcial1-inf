@@ -18,9 +18,10 @@ public class MatrizHash {
         bkfr = 10;
         m = 100;
         datos = new Producto[m][bkfr];
+        llenarDesdeArchivo();
     }
 
-    public void llenarDesdeArchivo() {
+    private void llenarDesdeArchivo() {
         try {
             Path archivo = Paths.get("productos.txt");
             List<String> texto = Files.readAllLines(archivo);
@@ -45,7 +46,6 @@ public class MatrizHash {
         } catch (IOException e) {
 
         }
-
     }
 
     public void almacenar(Producto producto) {

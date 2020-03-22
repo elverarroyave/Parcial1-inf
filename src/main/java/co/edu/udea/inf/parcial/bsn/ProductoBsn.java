@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 
 public class ProductoBsn {
 
-    MatrizHash matrizHash = new MatrizHash();
+    static MatrizHash matrizHash = new MatrizHash();
 
     public void save(Producto producto){
         matrizHash.almacenar(producto);

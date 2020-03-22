@@ -16,7 +16,7 @@ public class MatrizHash {
 
     public MatrizHash() {
         bkfr = 10;
-        m = 100;
+        m = 150;
         datos = new Producto[m][bkfr];
         llenarDesdeArchivo();
     }
@@ -79,7 +79,7 @@ public class MatrizHash {
         int j;
         for (j = 0; j < bkfr; j++) {
             System.out.println(datos[bucket][j].getCodigo());
-            if (datos[bucket][j] != null && producto.getCodigo() == datos[bucket][j].getCodigo()) {
+            if (datos[bucket][j] != null && producto.getCategoria().equals(datos[bucket][j].getCategoria()) && producto.getCodigo() == datos[bucket][j].getCodigo()) {
                 System.out.println("Encontrado en: " + bucket + ", " + j);
                 return datos[bucket][j];
             }
@@ -88,7 +88,7 @@ public class MatrizHash {
             while (bucket < m) {
                 bucket++;
                 for (j = 0; j < bkfr; j++) {
-                    if (datos[bucket][j] != null && datos[bucket][j].getCodigo() == producto.getCodigo()) {
+                    if (datos[bucket][j] != null && producto.getCategoria().equals(datos[bucket][j].getCategoria()) && datos[bucket][j].getCodigo() == producto.getCodigo()) {
                         return datos[bucket][j];
                     }
                 }

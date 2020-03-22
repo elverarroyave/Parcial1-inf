@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import co.edu.udea.inf.parcial.model.Producto;
 
@@ -14,11 +16,36 @@ public class MatrizHash {
     private int m;
     private Producto[][] datos;
 
+    private int sinonimos = 0;
+    private int colisiones = 0;
+
+    HashMap<String, Integer> categoriasColisiones = new HashMap<String, Integer>();
+
     public MatrizHash() {
         bkfr = 10;
         m = 150;
         datos = new Producto[m][bkfr];
         llenarDesdeArchivo();
+    }
+
+    public int getSinonimos() {
+        return sinonimos;
+    }
+
+    public int getColisiones() {
+        return colisiones;
+    }
+
+    public int getGreatBucket() {
+        Map.Entry<String, Integer> maxEntry = null;
+        for (Map.Entry<String, Integer> entry : categoriasColisiones.entrySet())
+        {
+            if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0)
+            {
+                maxEntry = entry;
+            }
+        }
+        return func(maxEntry.getKey());
     }
 
     private void llenarDesdeArchivo() {
@@ -58,10 +85,17 @@ public class MatrizHash {
                 break;
             }
             System.out.println("Datos sinonimos");
+            sinonimos++;
         }
         if (j == bkfr) {
             boolean insert = false;
             System.out.println("Dato colisionado");
+            colisiones++;
+
+            int col = categoriasColisiones.get(producto.getCategoria()) != null ? categoriasColisiones.get(producto.getCategoria()) : 0;
+            col++;
+            categoriasColisiones.put(producto.getCategoria(), col);
+
             while (!insert && bucket < m) {
                 bucket++;
                 for (j = 0; j < bkfr; j++) {

@@ -18,6 +18,7 @@ public class MatrizHash {
 
     private int sinonimos = 0;
     private int colisiones = 0;
+    private int numeroDeDatosAlmacenados = 0;
 
     HashMap<String, Integer> categoriasColisiones = new HashMap<String, Integer>();
 
@@ -26,6 +27,10 @@ public class MatrizHash {
         m = 150;
         datos = new Producto[m][bkfr];
         llenarDesdeArchivo();
+    }
+
+    public float lf() {
+        return numeroDeDatosAlmacenados/m*bkfr;
     }
 
     public int getSinonimos() {
@@ -82,6 +87,7 @@ public class MatrizHash {
             if (datos[bucket][j] == null) {
                 System.out.println("Dato alamcenado en " + bucket + ", " + j + " -> " + producto.getCodigo());
                 datos[bucket][j] = producto;
+                numeroDeDatosAlmacenados++;
                 break;
             }
             System.out.println("Datos sinonimos");
@@ -101,6 +107,7 @@ public class MatrizHash {
                 for (j = 0; j < bkfr; j++) {
                     if (datos[bucket][j] == null) {
                         datos[bucket][j] = producto;
+                        numeroDeDatosAlmacenados++;
                         insert = true;
                     }
                 }

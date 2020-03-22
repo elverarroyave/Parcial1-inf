@@ -7,9 +7,9 @@ public class Producto {
     private int contenido;
     private String unidadDeMedida;
     private String categoria;
-    private int precio;
+    private Double precio;
 
-    public Producto(int codigo, String descripcion, String marca, int contenido, String unidadDeMedida, String categoria, int precio) {
+    public Producto(int codigo, String descripcion, String marca, int contenido, String unidadDeMedida, String categoria, Double precio) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.marca = marca;
@@ -69,11 +69,16 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public int getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s %s", codigo, categoria, precio);
     }
 }

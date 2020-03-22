@@ -1,5 +1,11 @@
 package co.edu.udea.inf.parcial.persistence;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
 import co.edu.udea.inf.parcial.model.Producto;
 
 public class MatrizHash {
@@ -12,6 +18,34 @@ public class MatrizHash {
         bkfr = 10;
         m = 100;
         datos = new Producto[m][bkfr];
+    }
+
+    public void llenarDesdeArchivo() {
+        try {
+            Path archivo = Paths.get("productos.txt");
+            List<String> texto = Files.readAllLines(archivo);
+            Producto producto = new Producto();
+            for (String cadena : texto) {
+                String[] parts = cadena.split(";");
+                producto.setCodigo(Integer.parseInt(parts[0]));
+                producto.setDescripcion(parts[1]);
+                producto.setMarca(parts[2]);
+                producto.setContenido(Integer.parseInt(parts[3]));
+                producto.setUnidadDeMedida(parts[4]);
+                producto.setCategoria(parts[5]);
+
+                String[] precio = parts[6].split(",");
+                if (precio.length > 1) {
+                    producto.setPrecio(Double.parseDouble(precio[0] + "." + precio[1]));
+                } else {
+                    producto.setPrecio(Double.parseDouble(precio[0]));
+                }
+                almacenar(producto);
+            }
+        } catch (IOException e) {
+
+        }
+
     }
 
     public void almacenar(Producto producto) {
@@ -38,6 +72,7 @@ public class MatrizHash {
             if (datos[bucket][j] == null) {
                 System.out.println("Dato no encontrado");
                 return false;
+
             } else if (producto.getCodigo() == datos[bucket][j].getCodigo()) {
                 System.out.println("Encontrado en: " + bucket + ", " + j);
                 return true;

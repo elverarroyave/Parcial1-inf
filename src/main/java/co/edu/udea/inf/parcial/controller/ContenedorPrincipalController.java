@@ -17,7 +17,7 @@ public class ContenedorPrincipalController {
 
     public void mnuConsultar(){
         try{
-            AnchorPane consultar = FXMLLoader.load(getClass().getClassLoader().getResource( "view/userManager/employee/consultar-view.fxml"));
+            AnchorPane consultar = FXMLLoader.load(getClass().getClassLoader().getResource( "view/consultar-view.fxml"));
             contenedorPrincipal.setCenter(consultar);
         } catch (IOException e) {
             e.printStackTrace();
@@ -26,7 +26,7 @@ public class ContenedorPrincipalController {
 
     public void mnuCrear(){
         try{
-            AnchorPane crear = FXMLLoader.load(getClass().getClassLoader().getResource( "view/userManager/employee/crear-view.fxml"));
+            AnchorPane crear = FXMLLoader.load(getClass().getClassLoader().getResource( "view/crear-view.fxml"));
             contenedorPrincipal.setCenter(crear);
         } catch (IOException e) {
             e.printStackTrace();

@@ -32,7 +32,7 @@ public class CrearObjetoController {
 
     public void crearProducto(){
 
-        int codigo = Integer.parseInt(txtDescripcion.getText());
+        int codigo = Integer.parseInt(txtCodigo.getText());
         String descripcion = txtDescripcion.getText();
         String marca = txtMarca.getText();
         int contenido = Integer.parseInt(txtContenido.getText());

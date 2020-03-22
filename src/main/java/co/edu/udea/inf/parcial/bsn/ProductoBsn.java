@@ -9,7 +9,6 @@ public class ProductoBsn {
     MatrizHash matrizHash = new MatrizHash();
 
     public void save(Producto producto){
-
         matrizHash.almacenar(producto);
 
     }

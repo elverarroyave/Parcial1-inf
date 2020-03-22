@@ -74,17 +74,16 @@ public class MatrizHash {
         }
     }
 
-    public boolean consultar(Producto producto) {
+    public  Producto consultar(Producto producto) {
         int bucket = func(producto.getCategoria());
         int j;
         for (j = 0; j < bkfr; j++) {
             if (datos[bucket][j] == null) {
                 System.out.println("Dato no encontrado");
-                return false;
-
+                return null;
             } else if (producto.getCodigo() == datos[bucket][j].getCodigo()) {
                 System.out.println("Encontrado en: " + bucket + ", " + j);
-                return true;
+                return datos[bucket][j];
             }
         }
         if (j == bkfr) {
@@ -92,12 +91,12 @@ public class MatrizHash {
                 bucket++;
                 for (j = 0; j < bkfr; j++) {
                     if (datos[bucket][j].getCodigo() == producto.getCodigo()) {
-                        return true;
+                        return datos[bucket][j];
                     }
                 }
             }
         }
-        return false;
+        return null;
     }
 
     private int func(String categoria) {

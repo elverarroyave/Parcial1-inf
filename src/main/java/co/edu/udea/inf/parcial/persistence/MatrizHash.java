@@ -25,8 +25,8 @@ public class MatrizHash {
         try {
             Path archivo = Paths.get("productos.txt");
             List<String> texto = Files.readAllLines(archivo);
-            Producto producto = new Producto();
             for (String cadena : texto) {
+                Producto producto = new Producto();
                 String[] parts = cadena.split(";");
                 producto.setCodigo(Integer.parseInt(parts[0]));
                 producto.setDescripcion(parts[1]);

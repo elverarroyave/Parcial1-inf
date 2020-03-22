@@ -34,6 +34,30 @@ public class ProductoController {
     @FXML
     private TextField txtPrecio;
 
+
+    @FXML
+    private TextField ctxtCodigo;
+
+    @FXML
+    private TextField ctxtDescripcion;
+
+    @FXML
+    private TextField ctxtMarca;
+
+    @FXML
+    private TextField ctxtContenido;
+
+    @FXML
+    private TextField ctxtUM;
+
+    @FXML
+    private TextField ctxtCategoria;
+
+    @FXML
+    private TextField ctxtPrecio;
+
+
+
     ProductoBsn productoBsn = new ProductoBsn();
 
     public void crearProducto(){
@@ -56,9 +80,25 @@ public class ProductoController {
     public void consultar(){
         int cCodigo = Integer.parseInt(txtCCodigo.getText());
         String cCategoria = txtCCategoria.getText();
+
         Producto producto = new Producto();
         producto.setCodigo(cCodigo);
         producto.setCategoria(cCategoria);
+
+        producto = productoBsn.consultar(producto);
+
+        if(producto != null) {
+
+            ctxtCodigo.setText(producto.getCodigo() + "");
+            ctxtDescripcion.setText(producto.getDescripcion());
+            ctxtMarca.setText(producto.getMarca());
+            ctxtContenido.setText(producto.getContenido() + "");
+            ctxtUM.setText(producto.getUnidadDeMedida());
+            ctxtCategoria.setText(producto.getCategoria());
+            ctxtPrecio.setText(producto.getPrecio() + "");
+
+        }
+
 
     }
 

@@ -1,7 +1,5 @@
 package co.edu.udea.inf.parcial.controller;
 
-import co.edu.udea.inf.parcial.bsn.EmpleadoBsn;
-import co.edu.udea.inf.parcial.model.Empleado;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 

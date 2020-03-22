@@ -1,7 +1,7 @@
 package co.edu.udea.inf.parcial.controller;
 
 import co.edu.udea.inf.parcial.bsn.ClienteBsn;
-import co.edu.udea.inf.parcial.model.Cliente;
+import co.edu.udea.inf.parcial.model.Producto;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
@@ -40,11 +40,11 @@ public class RegistrarClienteController {
 
         //Creamos un archivo plano o un POJO que luego sera enviado entre capas para seguir el patron de MVC
 
-        Cliente cliente = new Cliente(id,name,lastName,bornDate,email,adress,numberPhone);
+        Producto producto = new Producto(id,name,lastName,bornDate,email,adress,numberPhone);
 
         //El POJO es capturado por el negocio cliente
 
-        clienteBsn.registrarCliente(cliente);
+        clienteBsn.registrarCliente(producto);
 
         System.out.println("Registramos Cliente con nombre "+ name +" y identificacion " + txtId.getText());
 
